@@ -4,7 +4,7 @@ from discord.ext import tasks, commands
 import time
 
 #server ip:port
-ip=[IP:PORT]
+ip='[IP:PORT]'
 
 #discord setup
 bot= commands.Bot(command_prefix='>')
@@ -41,7 +41,7 @@ async def myLoop():
     #setup and on check
     i=0
     while i<1:
-        server = JavaServer.lookup("ip")
+        server = JavaServer.lookup(ip)
         try:
             s = server.status()
             q = server.query()
