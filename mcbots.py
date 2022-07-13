@@ -6,7 +6,7 @@ import time
 #discord setup
 bot= commands.Bot(command_prefix='>')
 bot.remove_command('help')
-token='OTk1NzYwMTAwMjU2MDA2MjQ3.Gxdd8F.XvVvqP2UaBO2viCiIYkIYXNmHEvbgOAB_bmmLY'
+token='[TOKEN]'
 
 @bot.command()
 async def help(ctx):
@@ -38,7 +38,7 @@ async def myLoop():
     #setup and on check
     i=0
     while i<1:
-        server = JavaServer.lookup("188.112.176.157:25565")
+        server = JavaServer.lookup("[IP]:25565")
         try:
             s = server.status()
             q = server.query()
