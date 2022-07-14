@@ -9,7 +9,7 @@ ip='[IP]'
 
 #channel id and role (for role mention)
 idc=[CHANNELID]
-rolen=[ROLENAME]
+rolen='[ROLENAME]'
 
 #discord setup
 bot= commands.Bot(command_prefix='>')
