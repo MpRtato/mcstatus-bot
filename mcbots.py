@@ -49,7 +49,7 @@ async def pl(ctx):
 
 @bot.command()
 async def legend(ctx):
-    legend = discord.Embed(title='Bots legend:',description='**[Nr] players** - shows how many palyers are playing on server\n**dead server** - shows that the server is empty\n\n💀💀💀💀💀 - shows the the server is offline', color=0x002aff)
+    legend = discord.Embed(title='Bots legend:',description='**[Nr] players** - shows how many palyers are playing on server\n**dead server** - shows that the server is empty\n\n💀💀💀💀💀 - shows that the server is offline', color=0x002aff)
     await ctx.send(embed=legend)
 
 @bot.event
