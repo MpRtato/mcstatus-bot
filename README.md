@@ -1,3 +1,3 @@
 # mcstatus-bot
-Server has to have **enable-status=true** and **enable-query=true** in server properties n\
+Server has to have **enable-status=true** and **enable-query=true** in server properties \
 firewall need inbound exception
