@@ -41,7 +41,9 @@ async def pl(ctx):
         namesf=', '.join(str(j) for j in names)
 
         if playerc == 0:
-            plistoff = discord.Embed(title="Players:", description='*empty*', color=0xe7eb00)
+            plistoff = discord.Embed(title="Players:",description='**Empty**', color=0xe7eb00)
+            plistoff.set_image(url="https://media.tenor.com/j4IbM9Wtk8oAAAAd/dead-server-meme-server-dead.gif")
+            
             await ctx.send(embed=plistoff)
 
         else:
