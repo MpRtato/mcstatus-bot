@@ -18,6 +18,7 @@ intents.presences = True
 
 bot= commands.Bot(command_prefix='>', intents=intents)
 bot.remove_command('help')
+#discord bot token
 token='[TOKEN]'
 
 offon = 3 #0-off; 1-on;            3-idle
@@ -27,7 +28,7 @@ pplayerc=-1
 
 @bot.command()
 async def help(ctx):
-    help = discord.Embed(title="Commands:", description="**pl** - player list (if the server is online)\n**ip** - server ip\n**legend** - explenation of the bots statuses\n**help** - command list", color=0xffffff)
+    help = discord.Embed(title="Commands:", description="**pl** - player list (if the server is online)\n**ip** - server ip\n**version** - server version\n**legend** - explenation of the bots statuses\n**help** - command list", color=0xffffff)
     help.set_footer(text='prefix " > "')
     await ctx.send(embed=help)
 
@@ -62,6 +63,12 @@ async def ip(ctx):
     await ctx.send(embed=adress)
 
 @bot.command()
+async def version(ctx):
+    vers=s.version.name
+    versions = discord.Embed(title="Server version:", description=vers, color=0xff4d00)
+    await ctx.send(embed=versions)
+
+@bot.command()
 async def legend(ctx):
     legend = discord.Embed(title='Bots legend:',description='**[Nr] players** - shows how many palyers are playing on server\n**dead server** - shows that the server is empty\n\n💀💀💀💀💀 - shows that the server is offline', color=0x002aff)
     await ctx.send(embed=legend)
@@ -76,6 +83,7 @@ async def on_ready():
 async def myLoop():
     global status
     global q
+    global s
     global on
     global playerc
     global pplayerc
