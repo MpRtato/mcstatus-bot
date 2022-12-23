@@ -8,8 +8,8 @@ import asyncio
 serverip='[IP]'
 
 #channel id and role (for role mention)
-idc=[CHANNELID]
-rolen='[ROLENAME]'
+#idc=[CHANNELID]
+#rolen='[ROLENAME]'
 
 #discord setup
 intents = discord.Intents.default()
