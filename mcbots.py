@@ -92,7 +92,6 @@ async def myLoop():
     #setup and on check
     i=0
     while i<1:
-        #server = JavaServer(ipa,port)
         server = JavaServer.lookup(serverip)
         try:
             s = server.status()
