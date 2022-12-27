@@ -5,11 +5,11 @@ from discord.utils import get
 import asyncio
 
 #server ip:port
-serverip='[IP]'
+serverip='[IP:PORT]'
 
 #channel id and role (for role mention)
-#idc=[CHANNELID]
-#rolen='[ROLENAME]'
+idc=[CHANNELID]
+rolen='[ROLENAME]'
 
 #discord setup
 intents = discord.Intents.default()
@@ -28,15 +28,12 @@ pplayerc=-1
 
 @bot.command()
 async def help(ctx):
-    help = discord.Embed(title="Commands:", description="**pl** - player list (if the server is online)\n**ip** - server ip\n**version** - server version\n**legend** - explenation of the bots statuses\n**help** - command list", color=0xffffff)
+    help = discord.Embed(title="Commands:", description="**pl** - player list\n**ip** - server ip\n**version** - server version\n**legend** - explenation of the bots statuses\n**help** - command list", color=0xffffff)
     help.set_footer(text='prefix " > "')
     await ctx.send(embed=help)
 
 @bot.command()
 async def pl(ctx):
-    global on
-    global playerc
-
     if on == 1:
         names=q.players.names
         namesf=', '.join(str(j) for j in names)
@@ -59,14 +56,29 @@ async def pl(ctx):
 
 @bot.command()
 async def ip(ctx):
-    adress = discord.Embed(title="Server IP:", description=serverip, color=0xffffff)
-    await ctx.send(embed=adress)
+    if on==1:
+        adress = discord.Embed(title="Server IP:", description=serverip, color=0xffffff)
+        await ctx.send(embed=adress)
+    
+    else:
+        offline = discord.Embed(title=" ", description="**Server is offline**", color=0xe60000)
+        offline.set_image(url="https://c.tenor.com/EqGmpLByTJEAAAAC/dreaming-key-smash.gif")
+
+        await ctx.send(embed=offline)
 
 @bot.command()
 async def version(ctx):
-    vers=s.version.name
-    versions = discord.Embed(title="Server version:", description=vers, color=0xff4d00)
-    await ctx.send(embed=versions)
+    if on==1:
+        vers=s.version.name
+        versions = discord.Embed(title="Server version:", description=vers, color=0xff4d00)
+        await ctx.send(embed=versions)
+        
+    else:
+        offline = discord.Embed(title=" ", description="**Server is offline**", color=0xe60000)
+        offline.set_image(url="https://c.tenor.com/EqGmpLByTJEAAAAC/dreaming-key-smash.gif")
+
+        await ctx.send(embed=offline)
+
 
 @bot.command()
 async def legend(ctx):
